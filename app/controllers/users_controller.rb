@@ -4,7 +4,8 @@ class UsersController < ApplicationController
   # GET /users
   # GET /users.json
   def index
-    @users = User.all
+    # @users = User.all
+    @users = User.where(role:"Developer")
   end
 
   # GET /users/1
@@ -31,10 +32,22 @@ class UsersController < ApplicationController
         format.html { redirect_to @user, notice: 'User was successfully created.' }
         format.json { render :show, status: :created, location: @user }
       else
+        flash[:errors] = ["One or more errors in your entry"]
         format.html { render :new }
         format.json { render json: @user.errors, status: :unprocessable_entity }
       end
     end
+  end
+
+    def login
+      user = User.find_by(email: params[:email])
+      if user && user.authenticate(params[:password])
+        session[:user_id] = user.id
+        redirect_to "/users/#{user.id}"
+      else
+        flash[:errors] = ["Invalid email or password"]
+        redirect_to "/users/errors"
+      end
   end
 
   # PATCH/PUT /users/1
