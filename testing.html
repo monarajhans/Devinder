@@ -1,0 +1,93 @@
+<style>
+  /*#page {
+		background-image: url(/images/banner.jpg);
+		background-repeat: no-repeat;
+	}*/
+	#fixedNav {
+		display: block;
+		/*position: fixed;*/
+		z-index: 1;
+		background-color: rgba(0, 0, 0, 0.5);
+	}
+	#fixedNav h2 {
+		text-align: center;
+	}
+	#login {
+		margin: 0px auto;
+		width: 400px;
+		text-align: center;
+		font-family: inherit;
+	}
+	#regLink {
+		font-size: 12px;
+	}
+	#log {
+		width: 150px;
+	}
+	#reg {
+		display: none;
+	}
+	label {
+		float: left;
+	}
+</style>
+<div id="page">
+<div id="fixedNav">
+	<h2>Devinder</h2>
+</div>
+<script>
+	$("#regLink").click(function(){
+		$("#reg").slideToggle();
+	})
+</script>
+<div id="login">
+	<div id="log">
+		<h1 id="title"></h1>
+		<p id="regLink">New user? Click here to register</p>
+		<form action='/users/new' method='get'>
+			<input type='hidden' name='authenticity_token' value='<%= form_authenticity_token %>'>
+
+			<p><label for='email'>Email</label>
+			<input id="email" name="email" type="text"></p>
+
+			<p><label for='password'>Password</label>
+			<input type="password" id="password" name="password" type="text"></p>
+
+				<div id="reg">
+					<form action='/users/new' method='post'>
+						<input type='hidden' name='authenticity_token' value='<%= form_authenticity_token %>'>
+
+						<p><label for='email'>Email</label>
+						<input id="email" name="email" type="text"></p>
+
+						<p><label for='name'>Full Name</label>
+						<input id="name" name="name" type="text"></p>
+
+						<p><label for='password'>Password</label>
+						<input id="password" name="password" type="password"></p>
+
+						<p><label for='password'>Confirm Password</label>
+						<input id="password" name="password_confirmation" type="password"></p>
+
+					<p><label for="role">Role</label>
+						<input id="role" name="role" type="text"></p>
+
+						<p><label for='title'>Title</label>
+						<input id="title" name="title" type="text"></p>
+
+						<p><label for='description'>Description</label>
+						<textarea id="description" name="description" type="text"></textarea></p>
+
+						<p><input type="submit" value="Register"></p>
+					</form>
+				</div>
+
+			<p><input type="submit" value="Log In"></p>
+		</form>
+
+	</div>
+</div>
+
+
+
+<%= link_to 'Back', users_path %>

@@ -1,3 +1,4 @@
+<!--
 <div class="container-fluid">
 <h1>Welcome to DevFinder</h1>
 		<form action="/projects" method="post">
@@ -19,4 +20,211 @@
 			<input type='hidden' name='authenticity_token' value='<%= form_authenticity_token %>'>
 			<input type="submit" value="Sign In/Sign Up">
 		</form>
+</div> -->
+<style>
+	#login {
+    display: none;
+		color: white;
+		margin: 10% auto;
+    left: 0;
+    right: 0;
+		width: 460px;
+		text-align: center;
+		background-color: rgba(0, 0, 0, 0.8);
+		padding: 10px;
+    position: fixed;
+	}
+	#regLink {
+		font-size: 12px;
+		color: #42b972;
+		font-weight: bolder;
+	}
+	#regLink:hover {
+    cursor: pointer;
+		color: orange;
+	}
+	#log {
+		width: 150px;
+	}
+	#reg {
+		display: none;
+	}
+	p, h1, h2, label {
+		margin: 0px auto;
+		color: white;
+	}
+	input.inputs {
+		width: 300px;
+		margin: 0px auto;
+    height: 20px;
+    font-size: 12px;
+    text-align: center;
+	}
+  textarea {
+    width: 300px;
+		margin: 0px auto;
+	}
+  input.inputs, textarea.inputs {
+    font-size: 12px;
+    text-align: center;
+  }
+	.btn {
+		width: 100px;
+	}
+  a:hover {
+    color: orange;
+  }
+  input.btn {
+    margin-top: 10px;
+  }
+  form {
+    margin: 0px;
+  }
+	#banner .button {
+		width: 200px;
+		border-radius: 25px;
+	}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+	$("#regLink").click(function(){
+		$("#logBtn").slideToggle();
+		$("#reg").slideToggle();
+	})
+  $("#fixedNav").click(function(){
+    $("#login").slideToggle(1000);
+  })
+})
+</script>
+
+<div id="login">
+		<h2 id="title">Login</h2>
+		<p id="regLink">Click here to register</p>
+		<form action='/users/new' method='get'>
+			<input type='hidden' name='authenticity_token' value='<%= form_authenticity_token %>'>
+
+			<p><label for='email'>Email</label>
+			<input id="email" name="email" type="text" class="inputs"></p>
+
+			<p><label for='password'>Password</label>
+			<input type="password" id="password" name="password" type="text" class="inputs"></p>
+
+				<div id="reg">
+					<form action='/users/new' method='post'>
+						<input type='hidden' name='authenticity_token' value='<%= form_authenticity_token %>'>
+
+						<p><label for='email'>Email</label>
+						<input id="email" name="email" type="text" class="inputs"></p>
+
+						<p><label for='name'>Full Name</label>
+						<input id="name" name="name" type="text" class="inputs"></p>
+
+						<p><label for='password'>Password</label>
+						<input id="password" name="password" type="password" class="inputs"></p>
+
+						<p><label for='password'>Confirm Password</label>
+						<input id="password" name="password_confirmation" type="password" class="inputs"></p>
+
+					<p><label for="role">Role</label>
+						<input id="role" name="role" type="text" class="inputs"></p>
+
+						<p><label for='title'>Title</label>
+						<input id="title" name="title" type="text" class="inputs"></p>
+
+						<p><label for='description'>Description</label>
+						<textarea id="description" name="description" type="text" class="inputs"></textarea></p>
+
+						<p><input type="submit" value="Register" class="btn"></p>
+					</form>
+				</div>
+
+			<p id="logBtn"><input type="submit" value="Log In" class="btn"></p>
+		</form>
 </div>
+	<body class="landing">
+
+		<!-- Banner -->
+			<section id="banner">
+				<h2>We are Dev Finders</h2>
+				<p>We help you find your right professional match.</p>
+				<ul class="actions">
+
+					<li>
+						<a href="#" class="button big">Learn More</a>
+					</li>
+				</ul>
+
+			</section>
+
+		<!-- One -->
+			<section id="one" class="wrapper style1 align-center">
+				<div class="container">
+					<header>
+						<h2>Find the Perfect Web Developer or the next big break that you were looking for</h2>
+						<p>Instant access to top web developers</p>
+					</header>
+					<div class="row 200%">
+						<section class="4u 12u$(small)">
+							<i class="icon big rounded fa-clock-o"></i>
+							<p>Front-end developers</p>
+							<p>Scroll through multiple projects in Web Development, Web Designing, User Experience Design, WordPress Development, .NET Development</p>
+						</section>
+						<section class="4u 12u$(small)">
+							<i class="icon big rounded fa-comments"></i>
+							<p>Database developers</p>
+							<p>Find people for SQL, MySQL, NoSQL, MongoDB, Postgres, SQLite among other database structures.</p>
+						<a href="/users" class="button big">Look for Developers</a>
+						</section>
+						<section class="4u$ 12u$(small)">
+							<i class="icon big rounded fa-user"></i>
+							<p>Back-end developers</p>
+							<p>A hub of developers for Drupal, Javascript, Python, PHP, Ruby among many more.</p>
+						</section>
+
+					</div>
+				</div>
+			</section>
+
+		<!-- Two -->
+			<section id="two" class="wrapper style2 align-center">
+				<div class="container">
+					<header>
+						<h2>What People Are Saying</h2>
+						<p>Companies and individuals love using Devinder to work their way.</p>
+					</header>
+					<div class="row">
+						<section class="feature 6u 12u$(small)">
+							<img class="image fit" src="/images/pic01.jpg" alt="" />
+							<h3 class="title">ABC Company</h3>
+							<p>Devinder is an amazing service that I highly recommend to businesses of all sizes looking to find short or long-term, high quality resources.</p>
+						</section>
+						<section class="feature 6u$ 12u$(small)">
+							<img class="image fit" src="images/pic02.jpg" alt="" />
+							<h3 class="title">XYZ</h3>
+							<p>The hiring process on Devinder is easy, and every freelancer we have worked with was extremely professional and made sure we were more than happy.</p>
+						</section>
+						<section class="feature 6u 12u$(small)">
+							<img class="image fit" src="images/pic03.jpg" alt="" />
+							<h3 class="title">ABC Person</h3>
+							<p>I feel safe and secure when meeting new clients on Devinder. I’ve also been able to develop my skills working on a variety of projects.</p>
+						</section>
+						<section class="feature 6u$ 12u$(small)">
+							<img class="image fit" src="images/pic04.jpg" alt="" />
+							<h3 class="title">XYZ Person, CEO of ABC</h3>
+							<p>I started my company 5 years ago on Devinder using a single PC. Today, I manage more than 20 employees and will have earned $1 million at the end of this year.</p>
+						</section>
+					</div>
+					<footer>
+						<ul class="actions">
+							<li>
+								<a href="/projects" class="button alt big">Look for Projects</a>
+							</li>
+						</ul>
+					</footer>
+				</div>
+			</section>
+
+		<!-- Footer -->
+
+	</body>
+</html>
