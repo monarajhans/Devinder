@@ -10,16 +10,15 @@ Rails.application.routes.draw do
   get 'users/new' => 'users#login'
   get 'users/errors' => 'users#new'
   
-  resources :projects do
-    member do
-      get 'contributors'
-    end
-  end
+  resources :projects
 
   resources :users do
     member do
       get 'offers'
     end
   end
+
+  post 'project_details/:id/contribute' => 'project_details#contribute'
+  post 'project_details/:id/offer' => 'project_details#offer'
 
 end

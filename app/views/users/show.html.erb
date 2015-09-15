@@ -51,4 +51,13 @@
     </script>
   </form>
 </div>
+<form action="/project_details/<%= @user.id %>/offer" method="post">
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+  <select name="p_id">
+    <% @current_user.projects.each do |p| %>
+    <option value="<%= p.id %>"><%= p.title %></option>
+    <% end %>
+  </select>
+  <button>Make Offer</button>
+</form>
 <%= link_to 'Offers', offers_user_path  %>

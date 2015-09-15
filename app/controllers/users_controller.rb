@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: [:show, :edit, :update, :destroy]
+  before_action :set_user, only: [:show, :edit, :update, :destroy, :offers]
 
   # GET /users
   # GET /users.json
@@ -11,6 +11,7 @@ class UsersController < ApplicationController
   # GET /users/1
   # GET /users/1.json
   def show
+    @current_user = User.find(session[:user_id])
   end
 
   # GET /users/new
@@ -75,7 +76,6 @@ class UsersController < ApplicationController
   end
 
   def offers
-    @offers = User.find(params[:id]).projects
   end
 
   private
