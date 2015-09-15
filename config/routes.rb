@@ -9,8 +9,17 @@ Rails.application.routes.draw do
   post 'users' => 'users#new'
   get 'users/new' => 'users#login'
   get 'users/errors' => 'users#new'
+  
+  resources :projects do
+    member do
+      get 'contributors'
+    end
+  end
 
-  resources :projects
-  resources :users
+  resources :users do
+    member do
+      get 'offers'
+    end
+  end
 
 end
