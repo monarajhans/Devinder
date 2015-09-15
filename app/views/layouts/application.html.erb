@@ -6,30 +6,71 @@
     <meta name="description" content="" />
     <meta name="keywords" content="" />
     <!--[if lte IE 8]><script src="css/ie/html5shiv.js"></script><![endif]-->
-    <script src="javascripts/jquery.min.js"></script>
-    <script src="javascripts/skel.min.js"></script>
-    <script src="javascripts/skel-layers.min.js"></script>
-    <script src="javascripts/init.js"></script>
-    
-    <link rel="stylesheet" href="stylesheets/skel.css" />
-    <link rel="stylesheet" href="stylesheets/style.css" />
-    <link rel="stylesheet" href="stylesheets/style-xsmall.css" />
-    <link rel="stylesheet" href="stylesheets/style-xlarge.css" />
-    <link rel="stylesheet" href="stylesheets/style-medium.css" />
-    <link rel="stylesheet" href="stylesheets/style-small.css" />
-    <link rel="stylesheet" href="stylesheets/style-large.css" />
+    <script src="/javascripts/jquery.min.js"></script>
+    <script src="/javascripts/skel.min.js"></script>
+    <script src="/javascripts/skel-layers.min.js"></script>
+    <script src="/javascripts/init.js"></script>
+
+    <link rel="stylesheet" href="/stylesheets/skel.css" />
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+    <link rel="stylesheet" href="/stylesheets/style-xsmall.css" />
+    <link rel="stylesheet" href="/stylesheets/style-xlarge.css" />
+    <link rel="stylesheet" href="/stylesheets/style-medium.css" />
+    <link rel="stylesheet" href="/stylesheets/style-small.css" />
+    <link rel="stylesheet" href="/stylesheets/style-large.css" />
 
   <title>Devinder</title>
+  <style>
+  #fixedNav {
+    width: 100%;
+		position: fixed;
+		background-color: rgba(0, 0, 0, 0.5);
+		padding: 10px 0;
+    font-weight: 600;
+    margin: 0px auto;
+    z-index: 1;
+	}
+	#fixedNav h2 {
+		text-align: left;
+    display: inline-block;
+	}
+  #headerLeft {
+    text-align: left;
+    display: inline-block;
+    margin-left: 20px;
+    letter-spacing: .5em;
+    text-shadow: 3px 3px black;
+  }
+  #headerRight {
+    position: absolute;
+    right: 10px;
+    top: 15px;
+    /*margin-right: 20px;*/
+  }
+  #headerRight a {
+    margin-right: 20px;
+    font-weight: bolder;
+    text-decoration: none;
+  }
+  </style>
 </head>
 <body>
-
+  <div id="fixedNav">
+    <div id="headerLeft">
+      <h2>Devinder</h2>
+    </div>
+    <div id="headerRight">
+      <a href="">Home</a><a href="">Developers</a><a href="">Clients</a>
+    </div>
+  </div>
 <% if flash[:errors] %>
   <% flash[:errors].each do |e| %>
     <p><%= e %></p>
   <% end %>
 <% end %>
-
+<div id="yield">
 <%= yield %>
+</div>
 
 </body>
 </html>

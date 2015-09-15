@@ -10,6 +10,7 @@
 
 /* Basic */
 
+
 	body {
 		background: #fff;
 	}
@@ -987,6 +988,7 @@
 			background-color: transparent;
 			border: 1px solid #ffffff;
 			font-weight: 300;
+			width: 200px;
 		}
 
 			#banner .button:hover {
