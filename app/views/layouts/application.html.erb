@@ -6,18 +6,18 @@
     <meta name="description" content="" />
     <meta name="keywords" content="" />
     <!--[if lte IE 8]><script src="css/ie/html5shiv.js"></script><![endif]-->
-    <script src="javascripts/jquery.min.js"></script>
-    <script src="javascripts/skel.min.js"></script>
-    <script src="javascripts/skel-layers.min.js"></script>
-    <script src="javascripts/init.js"></script>
+    <script src="/javascripts/jquery.min.js"></script>
+    <script src="/javascripts/skel.min.js"></script>
+    <script src="/javascripts/skel-layers.min.js"></script>
+    <script src="/javascripts/init.js"></script>
 
-    <link rel="stylesheet" href="stylesheets/skel.css" />
-    <link rel="stylesheet" href="stylesheets/style.css" />
-    <link rel="stylesheet" href="stylesheets/style-xsmall.css" />
-    <link rel="stylesheet" href="stylesheets/style-xlarge.css" />
-    <link rel="stylesheet" href="stylesheets/style-medium.css" />
-    <link rel="stylesheet" href="stylesheets/style-small.css" />
-    <link rel="stylesheet" href="stylesheets/style-large.css" />
+    <link rel="stylesheet" href="/stylesheets/skel.css" />
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+    <link rel="stylesheet" href="/stylesheets/style-xsmall.css" />
+    <link rel="stylesheet" href="/stylesheets/style-xlarge.css" />
+    <link rel="stylesheet" href="/stylesheets/style-medium.css" />
+    <link rel="stylesheet" href="/stylesheets/style-small.css" />
+    <link rel="stylesheet" href="/stylesheets/style-large.css" />
 
   <title>Devinder</title>
 
@@ -71,7 +71,14 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
+  <div id="fixedNav">
+    <div id="headerLeft">
+      <h2>Devinder</h2>
+    </div>
+    <div id="headerRight">
+      <a href="">Home</a><a href="">Developers</a><a href="">Clients</a>
+    </div>
+  </div>
 <% if flash[:errors] %>
   <% flash[:errors].each do |e| %>
     <p><%= e %></p>

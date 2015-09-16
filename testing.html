@@ -1,93 +1,23 @@
-<style>
-  /*#page {
-		background-image: url(/images/banner.jpg);
-		background-repeat: no-repeat;
-	}*/
-	#fixedNav {
-		display: block;
-		/*position: fixed;*/
-		z-index: 1;
-		background-color: rgba(0, 0, 0, 0.5);
-	}
-	#fixedNav h2 {
-		text-align: center;
-	}
-	#login {
-		margin: 0px auto;
-		width: 400px;
-		text-align: center;
-		font-family: inherit;
-	}
-	#regLink {
-		font-size: 12px;
-	}
-	#log {
-		width: 150px;
-	}
-	#reg {
-		display: none;
-	}
-	label {
-		float: left;
-	}
-</style>
-<div id="page">
-<div id="fixedNav">
-	<h2>Devinder</h2>
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<style>h1{ color:red; }</style>
+<section id="main" class="wrapper">
+  <div class="container-fluid" style="background-image: url('/images/banner.jpg'); color: white;">
+    <header class="major">
+      <h2 style="color:white;">About Devinder</h2>
+      <p>Get to know us better</p>
+    </header>
+  </div>
+</section>
+<div class="container">
+<h1>Say hello to talent without boundaries</h1>
+<p>The best companies win with the best talent. But great people can be hard to find. We’ve created an online workplace for the world – connecting clients with top freelance professionals from San Francisco to Sao Paulo.</p>
+<p>Whether you need one writer or an entire team of programmers, we help you find the right experts to fuel your success. Our platform lets you work effortlessly with freelancers anywhere. Say goodbye to business as usual.</p>
+<br>
+<h2>Our Mission</h2>
+<p>To create economic and social value on a global scale by providing a trusted online workplace to connect, collaborate, and succeed.</p>
+<br>
+<h2>Our Vision</h2>
+<p>To connect businesses with great talent faster than ever before.</p>
 </div>
-<script>
-	$("#regLink").click(function(){
-		$("#reg").slideToggle();
-	})
-</script>
-<div id="login">
-	<div id="log">
-		<h1 id="title"></h1>
-		<p id="regLink">New user? Click here to register</p>
-		<form action='/users/new' method='get'>
-			<input type='hidden' name='authenticity_token' value='<%= form_authenticity_token %>'>
-
-			<p><label for='email'>Email</label>
-			<input id="email" name="email" type="text"></p>
-
-			<p><label for='password'>Password</label>
-			<input type="password" id="password" name="password" type="text"></p>
-
-				<div id="reg">
-					<form action='/users/new' method='post'>
-						<input type='hidden' name='authenticity_token' value='<%= form_authenticity_token %>'>
-
-						<p><label for='email'>Email</label>
-						<input id="email" name="email" type="text"></p>
-
-						<p><label for='name'>Full Name</label>
-						<input id="name" name="name" type="text"></p>
-
-						<p><label for='password'>Password</label>
-						<input id="password" name="password" type="password"></p>
-
-						<p><label for='password'>Confirm Password</label>
-						<input id="password" name="password_confirmation" type="password"></p>
-
-					<p><label for="role">Role</label>
-						<input id="role" name="role" type="text"></p>
-
-						<p><label for='title'>Title</label>
-						<input id="title" name="title" type="text"></p>
-
-						<p><label for='description'>Description</label>
-						<textarea id="description" name="description" type="text"></textarea></p>
-
-						<p><input type="submit" value="Register"></p>
-					</form>
-				</div>
-
-			<p><input type="submit" value="Log In"></p>
-		</form>
-
-	</div>
-</div>
-
-
-
-<%= link_to 'Back', users_path %>
