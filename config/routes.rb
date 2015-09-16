@@ -7,19 +7,25 @@ Rails.application.routes.draw do
   get 'projects' => 'projects#index'
   get 'users' => 'users#index'
   post 'users' => 'users#new'
-  get 'users/logout' => 'users#logout'
   get 'users/new' => 'users#login'
   get 'users/errors' => 'users#new'
-  
-  resources :projects
+  get 'homes/about' => 'homes#show'
+  get 'homes/team' => 'homes#team'
+  get 'homes/careers' => 'homes#careers'
+  get 'homes/privacy' => 'homes#privacy'
+  get 'homes/faq' => 'homes#faq'
+  get 'homes/terms' => 'homes#terms'
+
+  resources :projects do
+    member do
+      get 'contributors'
+    end
+  end
 
   resources :users do
     member do
       get 'offers'
     end
   end
-
-  post 'project_details/:id/contribute' => 'project_details#contribute'
-  post 'project_details/:id/offer' => 'project_details#offer'
 
 end

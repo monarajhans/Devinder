@@ -6,109 +6,50 @@
     <meta name="description" content="" />
     <meta name="keywords" content="" />
     <!--[if lte IE 8]><script src="css/ie/html5shiv.js"></script><![endif]-->
-    <script src="/javascripts/jquery.min.js"></script>
-    <script src="/javascripts/skel.min.js"></script>
-    <script src="/javascripts/skel-layers.min.js"></script>
-    <script src="/javascripts/init.js"></script>
-
-    <link rel="stylesheet" href="/stylesheets/skel.css" />
-    <link rel="stylesheet" href="/stylesheets/style.css" />
-    <link rel="stylesheet" href="/stylesheets/style-xsmall.css" />
-    <link rel="stylesheet" href="/stylesheets/style-xlarge.css" />
-    <link rel="stylesheet" href="/stylesheets/style-medium.css" />
-    <link rel="stylesheet" href="/stylesheets/style-small.css" />
-    <link rel="stylesheet" href="/stylesheets/style-large.css" />
+    <script src="javascripts/jquery.min.js"></script>
+    <script src="javascripts/skel.min.js"></script>
+    <script src="javascripts/skel-layers.min.js"></script>
+    <script src="javascripts/init.js"></script>
+    
+    <link rel="stylesheet" href="stylesheets/skel.css" />
+    <link rel="stylesheet" href="stylesheets/style.css" />
+    <link rel="stylesheet" href="stylesheets/style-xsmall.css" />
+    <link rel="stylesheet" href="stylesheets/style-xlarge.css" />
+    <link rel="stylesheet" href="stylesheets/style-medium.css" />
+    <link rel="stylesheet" href="stylesheets/style-small.css" />
+    <link rel="stylesheet" href="stylesheets/style-large.css" />
 
   <title>Devinder</title>
-  <style>
-
-  #fixedNav {
-    width: 100%;
-		position: fixed;
-		background-color: rgba(0, 0, 0, 0.2);
-		padding: 10px 0;
-    font-weight: 600;
-    margin: 0px auto;
-    z-index: 1;
-	}
-	#fixedNav h2 {
-    color: white;
-		text-align: left;
-    display: inline-block;
-    margin-bottom: 0px;
-	}
-  #headerLeft {
-    color: white;
-    text-align: left;
-    display: inline-block;
-    margin-left: 20px;
-    letter-spacing: .5em;
-    text-shadow: 3px 3px black;
-  }
-  #headerRight {
-    position: absolute;
-    right: 10px;
-    top: 15px;
-    /*margin-right: 20px;*/
-  }
-  #headerRight a {
-    margin-right: 20px;
-    font-weight: bolder;
-    text-decoration: none;
-  }
-  #logInLink {
-    margin-right: 20px;
-		color: #42b972;
-		font-weight: bolder;
-    cursor: pointer;
-  }
-  #logInLink:hover {
-    color: orange;
-  }
-  </style>
-  <!-- <script type="text/javascript">
-    $("#logInLink").click(function(){
-      $("#login").slideToggle(1000);
-    })
-  </script> -->
 </head>
 <body>
-  <div id="fixedNav">
-    <div id="headerLeft">
-      <h2>Devinder</h2>
-    </div>
-    <div id="headerRight">
-      <span id="logInLink">Login</span><a href="/users/logout">Logout</a><a href="/">Home</a><a href="/users">Developers</a><a href="/projects">Clients</a>
-    </div>
-  </div>
+
 <% if flash[:errors] %>
   <% flash[:errors].each do |e| %>
     <p><%= e %></p>
   <% end %>
 <% end %>
-<div id="yield">
+
 <%= yield %>
-</div>
 
 <footer id="footer">
                 <div class="container">
                     <div class="row">
                         <section class="4u 6u(medium) 12u$(small)">
                             <h3>Company Info</h3>
-                            <p>Find all the informaion you wanted to know about Devinder, here!</p>
+                            <p>Find all the information you wanted to know about Devinder, here!</p>
                             <ul class="alt">
-                                <li><a href="#">About Devinder</a></li>
-                                <li><a href="#">Our Team</a></li>
-                                <li><a href="#">Careers</a></li>
+                                <li><a href="/homes/about">About Devinder</a></li>
+                                <li><a href="/homes/team">Our Team</a></li>
+                                <li><a href="/homes/careers">Careers</a></li>
                             </ul>
                         </section>
                         <section class="4u 6u$(medium) 12u$(small)">
                             <h3>Resources</h3>
                             <p>Let us help you with some more additional resources!</p>
                             <ul class="alt">
-                                <li><a href="#">Help & FAQ</a></li>
-                                <li><a href="#">Privacy</a></li>
-                                <li><a href="#">Terms of service</a></li>
+                                <li><a href="/homes/faq">Help & FAQ</a></li>
+                                <li><a href="/homes/privacy">Privacy</a></li>
+                                <li><a href="/homes/terms">Terms of service</a></li>
                             </ul>
                         </section>
                         <section class="4u$ 12u$(medium) 12u$(small)">
