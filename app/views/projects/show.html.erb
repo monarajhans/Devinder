@@ -28,7 +28,11 @@
   <strong>Interested Contributors:</strong>
   <ul>
   <% @project.project_details.reject { |pd| pd.project_status || pd.offer_status || pd.project_status.nil? }.each do |pd| %>
-    <li><%= pd.user.name %></li>
+    <li>
+      <%= pd.user.name %> | 
+      <a href="/project_details/<%= pd.id %>/contribute" data-method="patch">Accept</a> | 
+      <a href="/project_details/<%= pd.id %>/contribute" data-method="delete">Reject</a>
+    </li>
   <% end %>
   </ul>
 </p>
