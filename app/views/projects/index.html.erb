@@ -2,7 +2,7 @@
         <div class="container-fluid" style="background-image: url('/images/banner.jpg'); color: white;">
 
           <header class="major">
-            <h2 style="color:white;">Available Projects</h2>
+            <h2 style="color:white; font-size:32px;">Available Projects</h2>
             <p>Here's a list of all our current ongoing projects</p>
           </header>
         </div>
@@ -16,7 +16,7 @@
         <th>Description</th>
         <th>Details</th>
       </tr>
-    </thead>   
+    </thead>
     <tbody>
       <% @projects.each do |project| %>
         <tr>
@@ -30,7 +30,6 @@
     </tbody>
   </table>
   <br>
-<%= link_to 'New Project', new_project_path %>  
+<%= link_to 'New Project', new_project_path %>
 <br>
 </div>
-

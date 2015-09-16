@@ -108,7 +108,8 @@ $(document).ready(function(){
 
 			<p><label for='password'>Password</label>
 			<input type="password" id="password" name="password" type="text" class="inputs"></p>
-
+			<p id="logBtn"><input type="submit" value="Log In" class="btn"></p>
+		</form>
 				<div id="reg">
 					<form action='/users/new' method='post'>
 						<input type='hidden' name='authenticity_token' value='<%= form_authenticity_token %>'>
@@ -137,9 +138,6 @@ $(document).ready(function(){
 						<p><input type="submit" value="Register" class="btn"></p>
 					</form>
 				</div>
-
-			<p id="logBtn"><input type="submit" value="Log In" class="btn"></p>
-		</form>
 </div>
 	<body class="landing">
 

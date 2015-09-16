@@ -180,10 +180,11 @@
 	header.major {
 		text-align: center;
 		margin-bottom: 3em;
+		padding-top: 100px;
 	}
 
 		header.major h2 {
-			font-size: 3em;
+			font-size: 32px;
 		}
 
 		header.major p {
@@ -996,7 +997,7 @@
 /* Wrapper */
 
 	.wrapper {
-		padding: 6em 0em 4em;
+		/*padding: 6em 0em 4em;*/
 	}
 
 		.wrapper.style1 {

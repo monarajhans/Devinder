@@ -21,6 +21,7 @@
 
   <title>Devinder</title>
   <style>
+
   #fixedNav {
     width: 100%;
 		position: fixed;
@@ -31,10 +32,13 @@
     z-index: 1;
 	}
 	#fixedNav h2 {
+    color: white;
 		text-align: left;
     display: inline-block;
+    margin-bottom: 0px;
 	}
   #headerLeft {
+    color: white;
     text-align: left;
     display: inline-block;
     margin-left: 20px;
@@ -52,7 +56,21 @@
     font-weight: bolder;
     text-decoration: none;
   }
+  #logInLink {
+    margin-right: 20px;
+		color: #42b972;
+		font-weight: bolder;
+    cursor: pointer;
+  }
+  #logInLink:hover {
+    color: orange;
+  }
   </style>
+  <!-- <script type="text/javascript">
+    $("#logInLink").click(function(){
+      $("#login").slideToggle(1000);
+    })
+  </script> -->
 </head>
 <body>
   <div id="fixedNav">
@@ -60,7 +78,7 @@
       <h2>Devinder</h2>
     </div>
     <div id="headerRight">
-      <a href="">Home</a><a href="">Developers</a><a href="">Clients</a>
+      <span id="logInLink">Login</span><a href="/">Home</a><a href="/users">Developers</a><a href="/projects">Clients</a>
     </div>
   </div>
 <% if flash[:errors] %>
