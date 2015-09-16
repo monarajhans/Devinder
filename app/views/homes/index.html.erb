@@ -33,11 +33,12 @@
 		background-color: rgba(0, 0, 0, 0.8);
 		padding: 10px;
     position: fixed;
+		z-index: 3;
 	}
 	#regLink {
 		font-size: 12px;
 		color: #42b972;
-		font-weight: bolder;
+		/*font-weight: bolder;*/
 	}
 	#regLink:hover {
     cursor: pointer;
@@ -49,7 +50,7 @@
 	#reg {
 		display: none;
 	}
-	p, h1, h2, label {
+	#login.p, h1, h2, label {
 		margin: 0px auto;
 		color: white;
 	}
@@ -93,6 +94,9 @@ $(document).ready(function(){
 	})
   $("#fixedNav").click(function(){
     $("#login").slideToggle(1000);
+  })
+	$("#regLink").click(function(){
+    $("#regLink").html("Click here to Login");
   })
 })
 </script>
@@ -215,7 +219,7 @@ $(document).ready(function(){
 					<footer>
 						<ul class="actions">
 							<li>
-								<a href="/projects" class="button alt big">Look for Projects</a>
+								<a href="/projects" class="button alt" style="background-color: rgba(0,0,0,.1); width: 300px; height: 66px;">Look for Projects</a>
 							</li>
 						</ul>
 					</footer>
