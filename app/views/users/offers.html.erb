@@ -1,5 +1,11 @@
 <h1>Offers</h1>
+<ul>
 <% @user.project_details.reject { |pd| pd.offer_status || pd.offer_status.nil? }.each do |pd| %>
-<p><%= pd.project.title %></p>
+  <li>
+    <%= pd.project.title %> | 
+    <a href="">Accept</a> | 
+    <a href="">Reject</a>
+  </li>
 <% end %>
+</ul>
 <a href="/home">Home</a>
