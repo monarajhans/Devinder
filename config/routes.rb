@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   get 'projects' => 'projects#index'
   get 'users' => 'users#index'
   post 'users' => 'users#new'
+  get 'users/logout' => 'users#logout'
   get 'users/new' => 'users#login'
   get 'users/errors' => 'users#new'
   
