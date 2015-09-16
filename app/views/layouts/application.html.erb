@@ -25,11 +25,10 @@
   #fixedNav {
     width: 100%;
 		position: fixed;
-		background-color: rgba(0, 0, 0, 0.2);
+		background-color: rgba(0, 0, 0, 0.1);
 		padding: 10px 0;
-    font-weight: 600;
     margin: 0px auto;
-    z-index: 1;
+    z-index: 3;
 	}
 	#fixedNav h2 {
     color: white;
@@ -44,33 +43,29 @@
     margin-left: 20px;
     letter-spacing: .5em;
     text-shadow: 3px 3px black;
+    font-weight: 600;
   }
   #headerRight {
     position: absolute;
     right: 10px;
     top: 15px;
-    /*margin-right: 20px;*/
   }
   #headerRight a {
     margin-right: 20px;
-    font-weight: bolder;
     text-decoration: none;
   }
   #logInLink {
     margin-right: 20px;
 		color: #42b972;
-		font-weight: bolder;
     cursor: pointer;
   }
   #logInLink:hover {
     color: orange;
   }
+  .headerSpace {
+    height: 80px;
+  }
   </style>
-  <!-- <script type="text/javascript">
-    $("#logInLink").click(function(){
-      $("#login").slideToggle(1000);
-    })
-  </script> -->
 </head>
 <body>
   <div id="fixedNav">

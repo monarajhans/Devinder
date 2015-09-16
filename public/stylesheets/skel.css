@@ -63,6 +63,9 @@
 			}
 
 /* Grid */
+body.p {
+	color: black
+}
 
 	.row {
 		border-bottom: solid 1px transparent;
