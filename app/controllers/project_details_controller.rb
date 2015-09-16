@@ -4,8 +4,28 @@ class ProjectDetailsController < ApplicationController
     redirect_to :back
   end
 
+  def accept_contributor
+    ProjectDetail.find(params[:id]).update(project_status: true)
+    redirect_to :back
+  end
+
+  def reject_contributor
+    ProjectDetail.find(params[:id]).destroy
+    redirect_to :back
+  end
+
   def offer
     ProjectDetail.create(user: User.find(params[:id]), project: Project.find(params[:p_id]), offer_status: false)
+    redirect_to :back
+  end
+
+  def accept_offer
+    ProjectDetail.find(params[:id]).update(offer_status: true)
+    redirect_to :back
+  end
+
+  def reject_offer
+    ProjectDetail.find(params[:id]).destroy
     redirect_to :back
   end
 end
