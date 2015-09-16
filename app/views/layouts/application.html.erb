@@ -55,6 +55,13 @@
     margin-right: 20px;
     text-decoration: none;
   }
+  #headerRight a:hover {
+    color: orange;
+  }
+  .container {
+    width: 900px;
+    margin: 0px auto;
+  }
   #logInLink {
     margin-right: 20px;
 		color: #42b972;
@@ -76,7 +83,7 @@
       <h2>Devinder</h2>
     </div>
     <div id="headerRight">
-      <a href="">Home</a><a href="">Developers</a><a href="">Clients</a>
+      <span id="logInLink">Login</span><a href="/">Home</a><a href="/users">Developers</a><a href="/projects">Clients</a>
     </div>
   </div>
 <% if flash[:errors] %>
