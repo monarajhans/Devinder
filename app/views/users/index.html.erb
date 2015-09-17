@@ -30,7 +30,17 @@
         <td style="width:100px;"><% (1..user.rating/user.total_ratings).each do %>
                   <img src="/images/star.png" style="height:10px; width:10px;">
               <% end %></td>
-        <td><%= link_to 'Show', user %></td>
+        <script>
+          $("#showLink").click(function(){
+            <% if session[:user_id] %>
+              <%= redirect_to "/" %>
+              <% else %>
+              $("#login").fadeIn(1000);
+              $("#regLink").html("Please login to continue or <br>Click here to Register");
+            <% end %>
+          })
+        </script>
+        <td id="showLink">Show</td>
         <td><%= link_to 'Edit', edit_user_path(user) %></td>
         <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>

@@ -106,7 +106,7 @@
 		margin: 0px auto;
 		color: white;
 	}
-	#login input.inputs {
+	#login input.inputs, #role.inputs {
 		width: 300px;
 		margin: 0px auto;
     height: 20px;
@@ -117,9 +117,13 @@
     width: 300px;
 		margin: 0px auto;
 	}
-  #login input.inputs, #login textarea.inputs {
+  #login input.inputs, #login textarea.inputs, #role.inputs {
     font-size: 12px;
     text-align: center;
+  }
+  #role.inputs option {
+    text-align: center;
+    background-color: #313131;
   }
 	#login .btn {
 		width: 100px;
@@ -136,6 +140,12 @@
 	#reg p {
 		margin-bottom: 2px;
 	}
+  #login select {
+    padding-left: 65px;
+  }
+  #login p {
+    margin-bottom: 0px;
+  }
   </style>
   <script type="text/javascript">
   $(document).ready(function(){
@@ -197,6 +207,7 @@
 
   					<p><label for="role">Role</label>
   						<select id="role" name="user[role]" class="inputs">
+                <option value="" disabled selected>Are you a Developer or Client?</option>
                 <option value="Client">Client</option>
                 <option value="Developer">Developer</option>
               </select>
