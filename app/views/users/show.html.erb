@@ -28,7 +28,6 @@ p {
 }
 #prof {
   text-align: center;
-  font-weight: 400;
 }
 #stripe {
   margin: 0px auto;
@@ -46,10 +45,10 @@ p {
 }
 </style>
 <section id="main" class="wrapper">
-  <div class="container-fluid" style="background-image: url('/images/banner.jpg'); color: white; height:60%; margin-bottom:15px;">
+  <div class="container-fluid" style="background-image: url('/images/c.jpg'); color: white; height:60%; margin-bottom:15px;">
 
     <header class="major">
-      <h2 id="prof" style="color:white; text-shadow:2px 2px black;"><%= @user.name %>'s Profile</h2>
+      <h2 id="prof" style="color:white;"><%= @user.name %>'s Profile</h2>
     </header>
   </div>
 </section>
@@ -90,12 +89,14 @@ p {
   <br>
   <br>
   <br>
+</div>
 
   <div id="footLinks">
     <%= link_to 'Edit', edit_user_path(@user) %> |
     <%= link_to 'Back', users_path %> |
     <a href="/home">Home</a>
   </div>
+</div>
 
   <!-- <div id="stripe">
     <form action="" method="POST">
@@ -110,4 +111,3 @@ p {
     </form>
   </div> -->
   <!-- <%= link_to 'Offers', offers_user_path  %> -->
-</div>
