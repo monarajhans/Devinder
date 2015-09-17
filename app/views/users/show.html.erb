@@ -1,14 +1,14 @@
 <p id="notice"><%= notice %></p>
 <script>
-var random = "";
-$.ajax({
-  url: 'https://randomuser.me/api/?gender=male',
-  dataType: 'json',
-  success: function(data){
-    random = data.results[0].user.picture.large;
-    $("#randImg").attr("src", random);
-  }
-});
+// var random = "";
+// $.ajax({
+//   url: 'https://randomuser.me/api/?gender=male',
+//   dataType: 'json',
+//   success: function(data){
+//     random = data.results[0].user.picture.large;
+//     $("#randImg").attr("src", random);
+//   }
+// });
 </script>
 <!-- <div class="headerSpace"></div> -->
 <style>
@@ -55,7 +55,7 @@ p {
 <div class="container">
 <div id="profile">
   <p style="margin:0px auto;"><span><a href="#" class="icon rounded fa-github" style="color:black"><span class="label">Github</span></a><a href="#" class="icon rounded fa-linkedin" style="color:black"><span class="label">Linkedin</span></a></span>
-  <img class="image right" id="randImg"></p>
+  <img src="https://randomuser.me/api/portraits/<%= @user.photo %>.jpg" class="image right" id="randImg"></p>
   <p>
     <strong><%= @user.title %></strong>
   </p>
@@ -68,9 +68,13 @@ p {
   <p>
     <script>console.log(random)</script>
     <strong>Rating:</strong>
-    <% @stars = @user.rating / @user.total_ratings %>
-    <% (1..@stars).each do %>
-      <img src="/images/star.png">
+    <% if @user.rating %>
+      <% @stars = @user.rating / @user.total_ratings %>
+      <% (1..@stars).each do %>
+        <img src="/images/star.png">
+      <% end %>
+    <% else %>
+        <p>User is not yet rated</p>
     <% end %>
 
   </p>

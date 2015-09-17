@@ -1,125 +1,14 @@
 <style>
-	#login {
-    display: none;
-		color: white;
-		margin: 10% auto;
-    left: 0;
-    right: 0;
-		width: 460px;
-		text-align: center;
-		background-color: rgba(0, 0, 0, 0.8);
-		padding: 10px;
-    position: fixed;
-		z-index: 3;
-	}
-	#regLink {
-		font-size: 12px;
-		color: #39ff14;
-		/*font-weight: bolder;*/
-	}
-	#regLink:hover {
-    cursor: pointer;
-		color: orange;
-	}
-	#log {
-		width: 150px;
-	}
-	#reg {
-		display: none;
-	}
-	#login.p, h1, h2, label {
-		margin: 0px auto;
-		color: white;
-	}
-	input.inputs {
-		width: 300px;
-		margin: 0px auto;
-    height: 20px;
-    font-size: 12px;
-    text-align: center;
-	}
-  textarea {
-    width: 300px;
-		margin: 0px auto;
-	}
-  input.inputs, textarea.inputs {
-    font-size: 12px;
-    text-align: center;
-  }
-	.btn {
-		width: 100px;
-	}
-  a:hover {
-    color: orange;
-  }
-  input.btn {
-    margin-top: 10px;
-  }
-  form {
-    margin: 0px;
-  }
 	#banner .button {
 		width: 200px;
 		border-radius: 25px;
 	}
+  h1, h2, label {
+		margin: 0px auto;
+		color: white;
+	}
 </style>
-<script type="text/javascript">
-$(document).ready(function(){
-	$("#regLink").click(function(){
-		$("#logBtn").slideToggle();
-		$("#reg").slideToggle();
-	})
-  $("#fixedNav").click(function(){
-    $("#login").slideToggle(1000);
-  })
-	$("#regLink").click(function(){
-    $("#regLink").html("Click here to Login");
-  })
-})
-</script>
 
-<div id="login">
-		<h2 id="title">Login</h2>
-		<p id="regLink">Click here to register</p>
-		<form action='/users/new' method='get'>
-			<input type='hidden' name='authenticity_token' value='<%= form_authenticity_token %>'>
-
-			<p><label for='email'>Email</label>
-			<input id="email" name="email" type="text" class="inputs"></p>
-
-			<p><label for='password'>Password</label>
-			<input type="password" id="password" name="password" type="text" class="inputs"></p>
-			<p id="logBtn"><input type="submit" value="Log In" class="btn"></p>
-		</form>
-				<div id="reg">
-					<form action='/users/new' method='post'>
-						<input type='hidden' name='authenticity_token' value='<%= form_authenticity_token %>'>
-
-						<p><label for='email'>Email</label>
-						<input id="email" name="email" type="text" class="inputs"></p>
-
-						<p><label for='name'>Full Name</label>
-						<input id="name" name="name" type="text" class="inputs"></p>
-
-						<p><label for='password'>Password</label>
-						<input id="password" name="password" type="password" class="inputs"></p>
-
-						<p><label for='password'>Confirm Password</label>
-						<input id="password" name="password_confirmation" type="password" class="inputs"></p>
-
-					<p><label for="role">Role</label>
-						<input id="role" name="role" type="text" class="inputs"></p>
-
-						<p><label for='title'>Title</label>
-						<input id="title" name="title" type="text" class="inputs"></p>
-
-						<p><label for='description'>Description</label>
-						<textarea id="description" name="description" type="text" class="inputs"></textarea></p>
-
-						<p><input type="submit" value="Register" class="btn"></p>
-					</form>
-				</div>
-</div>
 	<body class="landing">
 
 		<!-- Banner -->
@@ -134,14 +23,26 @@ $(document).ready(function(){
 				</ul>
 
 			</section>
-
+<script>
+function randColor(){
+	$("#access").attr("style", function getColor() {
+		var letters = '0123456789ABCDEF'.split('');
+		var color = 'color:#';
+		for (var i = 0; i < 6; i++ ) {
+				color += letters[Math.floor(Math.random() * 16)];
+		}
+		color += ";margin-top:4px;font-weight:500;font-size:32px;"
+		return color;
+	});
+}
+	setInterval(randColor, 400);
+</script>
 		<!-- One -->
 			<section id="one" class="wrapper style1 align-center">
 				<div class="container">
 					<header>
 						<h2>Find the Perfect Web Developer or the next big break that you were looking for</h2>
-						<br>
-						<h3 style="color:white;">Instant access to top web developers</h3>
+						<p id="access" style="">Instant access to top web developers!</p>
 					</header>
 					<div class="row 200%">
 						<section class="4u 12u$(small)">
