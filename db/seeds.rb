@@ -20,8 +20,7 @@ User.create(name: "Sunshine Construction", email: "sc@gmail.com", password: "123
 "Client", title: "Sunshine Contruction", description: "We do everything from filling pot holes to constructing entire community centers", rating: 34, total_ratings:
 10, photo: "men/15")
 
-User.create(name: "Safeway", email: "s@gmail.com", password: "123", role:
-"Client", title: "Safeway", description: "We do neighborhood groceries", rating: 24, total_ratings:
+User.create(name: "Safeway", email: "s@gmail.com", password: "123", role: "Client", title: "Safeway", description: "We do neighborhood groceries", rating: 24, total_ratings:
 10, photo: "women/15")
 
 Project.create(title: "Need website built", description: "We are a small startup, trying to create an online precense. Looking for a full stack

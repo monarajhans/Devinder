@@ -21,7 +21,15 @@
   <strong>Contributors:</strong>
   <ul>
   <% @project.project_details.select { |pd| pd.project_status || pd.offer_status }.each do |pd| %>
-    <li><%= pd.user.name %></li>
+    <li><%= pd.user.name %> | <script type="text/javascript"
+                                src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+                                data-key="pk_test_NaagdnWduin4tQPrZACSBq2o"
+                                data-amount= '$100'
+                                data-name="Devinder"
+                                data-description=""
+                                data-image="/images/devfinder_final_shadow.png">
+                              </script>
+    </li>
   <% end %>
   </ul>
 </p>
