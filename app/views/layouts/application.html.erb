@@ -50,11 +50,13 @@
     position: absolute;
     right: 10px;
     top: 15px;
+    font-family: consolas;
+    color: #51ff15;
   }
   #headerRight a {
     margin-right: 20px;
     text-decoration: none;
-    color: #39ff14;
+    color: #51ff15;
   }
   #headerRight a:hover {
     color: orange;
@@ -65,7 +67,6 @@
   }
   #logInLink {
     margin-right: 20px;
-		color: #39ff14;
     cursor: pointer;
   }
   #logInLink:hover {
@@ -74,7 +75,79 @@
   .headerSpace {
     height: 80px;
   }
+  #login {
+    display: none;
+		color: white;
+		margin: 10% auto;
+    left: 0;
+    right: 0;
+		width: 460px;
+		text-align: center;
+		background-color: rgba(0, 0, 0, 0.8);
+		padding: 10px;
+    position: fixed;
+		z-index: 3;
+	}
+	#regLink {
+		font-size: 14px;
+		color: #51ff15;
+	}
+	#regLink:hover {
+    cursor: pointer;
+		color: orange;
+	}
+	#log {
+		width: 150px;
+	}
+	#reg {
+		display: none;
+	}
+	#login.p, h1, h2, label {
+		margin: 0px auto;
+		color: white;
+	}
+	#login input.inputs {
+		width: 300px;
+		margin: 0px auto;
+    height: 20px;
+    font-size: 12px;
+    text-align: center;
+	}
+  #login textarea {
+    width: 300px;
+		margin: 0px auto;
+	}
+  #login input.inputs, #login textarea.inputs {
+    font-size: 12px;
+    text-align: center;
+  }
+	#login .btn {
+		width: 100px;
+	}
+  #login a:hover {
+    color: orange;
+  }
+  #login input.btn {
+    margin-top: 10px;
+  }
+  #login form {
+    margin: 0px;
+  }
+	#reg p {
+		margin-bottom: 2px;
+	}
   </style>
+  <script type="text/javascript">
+  $(document).ready(function(){
+  	$("#regLink").click(function(){
+  		$("#logForm").slideToggle();
+  		$("#reg").slideToggle();
+  	})
+    $("#logInLink").click(function(){
+      $("#login").slideToggle(1000);
+    })
+  })
+  </script>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
@@ -86,6 +159,48 @@
     <div id="headerRight">
       <span id="logInLink">Login</span><a href="/">Home</a><a href="/users">Developers</a><a href="/projects">Clients</a>
     </div>
+  </div>
+  <div id="login">
+  		<h2 id="title">Login</h2>
+  		<p id="regLink">Click here to register</p>
+  		<form action='/users/new' method='get' id="logForm">
+  			<input type='hidden' name='authenticity_token' value='<%= form_authenticity_token %>'>
+
+  			<p><label for='email'>Email</label>
+  			<input id="email" name="email" type="text" class="inputs"></p>
+
+  			<p><label for='password'>Password</label>
+  			<input type="password" id="password" name="password" type="text" class="inputs"></p>
+  			<p id="logBtn"><input type="submit" value="Log In" class="btn"></p>
+  		</form>
+  				<div id="reg">
+  					<form action='/users/new' method='post'>
+  						<input type='hidden' name='authenticity_token' value='<%= form_authenticity_token %>'>
+
+  						<p><label for='email'>Email</label>
+  						<input id="email" name="email" type="text" class="inputs"></p>
+
+  						<p><label for='name'>Full Name</label>
+  						<input id="name" name="name" type="text" class="inputs"></p>
+
+  						<p><label for='password'>Password</label>
+  						<input id="password" name="password" type="password" class="inputs"></p>
+
+  						<p><label for='password'>Confirm Password</label>
+  						<input id="password" name="password_confirmation" type="password" class="inputs"></p>
+
+  					<p><label for="role">Role</label>
+  						<input id="role" name="role" type="text" class="inputs"></p>
+
+  						<p><label for='title'>Title</label>
+  						<input id="title" name="title" type="text" class="inputs"></p>
+
+  						<p><label for='description'>Description</label>
+  						<textarea id="description" name="description" type="text" class="inputs"></textarea></p>
+
+  						<p><input type="submit" value="Register" class="btn"></p>
+  					</form>
+  				</div>
   </div>
 <% if flash[:errors] %>
   <% flash[:errors].each do |e| %>
