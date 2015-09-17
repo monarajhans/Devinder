@@ -3,13 +3,11 @@ Rails.application.routes.draw do
   root 'homes#index'
 
   get 'home' => 'homes#index'
-  post 'projects' => 'projects#new'
-  get 'projects' => 'projects#index'
-  get 'users' => 'users#index'
-  post 'users' => 'users#new'
-  get 'users/new' => 'users#login'
+
+  post 'users/login' => 'users#login'
   get 'users/logout' => 'users#logout'
   get 'users/errors' => 'users#new'
+
   get 'homes/about' => 'homes#show'
   get 'homes/team' => 'homes#team'
   get 'homes/careers' => 'homes#careers'
