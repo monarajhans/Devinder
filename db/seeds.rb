@@ -23,3 +23,8 @@ User.create(name: "Sunshine Construction", email: "sc@gmail.com", password: "123
 User.create(name: "Safeway", email: "s@gmail.com", password: "123", role:
 "Client", title: "Safeway", description: "We do neighborhood groceries", rating: 24, total_ratings:
 10, photo: "women/15")
+
+Project.create(title: "Need website built", description: "We are a small startup, trying to create an online precense. Looking for a full stack
+developer")
+
+ProjectDetail.create(user_id: 1, project_id: 1)
