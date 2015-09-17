@@ -19,7 +19,7 @@
     <link rel="stylesheet" href="/stylesheets/style-small.css" />
     <link rel="stylesheet" href="/stylesheets/style-large.css" />
 
-  <title>Devinder</title>
+  <title>DevFinder</title>
 
   <style>
 
@@ -85,7 +85,12 @@
       <img src="/images/devfinder_final_shadow.png" class="img-thumbnail" height="35">
     </div>
     <div id="headerRight">
-      <span id="logInLink">Login</span><a href="/">Home</a><a href="/users">Developers</a><a href="/projects">Clients</a>
+      <% if current_user %>
+        <a href="/users/logout">Logout</a>
+      <% else %>
+        <span id="logInLink">Login</span>
+      <% end %>
+      <a href="/">Home</a><a href="/users">Developers</a><a href="/projects">Clients</a>
     </div>
   </div>
 <% if flash[:errors] %>
