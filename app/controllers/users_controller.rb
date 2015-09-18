@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy, :offers]
+  before_action :require_login, only: [:show, :edit, :update, :destroy, :offers]
 
   # GET /users
   # GET /users.json
@@ -47,7 +48,7 @@ class UsersController < ApplicationController
       redirect_to "/users/#{user.id}"
     else
       flash[:errors] = ["Invalid email or password"]
-      redirect_to "/"
+      redirect_to :back
     end
   end
 
