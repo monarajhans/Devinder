@@ -38,10 +38,10 @@
         <script>
           $("#showLink").click(function(){
             <% if session[:user_id] %>
-              <%= redirect_to "/" %>
+                alert("This is broken.  Should link to user profile. -MR");
               <% else %>
-              $("#login").fadeIn(1000);
-              $("#regLink").html("Please login to continue or <br>Click here to Register");
+                $("#login").fadeIn(1000);
+                $("#regLink").html("Please login to continue or <br>Click here to Register");
             <% end %>
           })
         </script>
