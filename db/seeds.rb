@@ -26,4 +26,4 @@ User.create(name: "Safeway", email: "s@gmail.com", password: "123", role: "Clien
 Project.create(title: "Need website built", description: "We are a small startup, trying to create an online precense. Looking for a full stack
 developer")
 
-ProjectDetail.create(user_id: 1, project_id: 1)
+ProjectDetail.create(user_id: 4, project_id: 1)

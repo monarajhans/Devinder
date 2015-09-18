@@ -40,8 +40,8 @@
             <% if session[:user_id] %>
                 alert("This is broken.  Should link to user profile. -MR");
               <% else %>
+                $("#regLink").html("Please login to continue or<br><p style='color:orange;'>Click here to Register</p>");
                 $("#login").fadeIn(1000);
-                $("#regLink").html("Please login to continue or <br>Click here to Register");
             <% end %>
           })
         </script>

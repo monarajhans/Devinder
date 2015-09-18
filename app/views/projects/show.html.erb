@@ -1,13 +1,63 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Title:</strong>
+<style>
+html {
+  margin-top: -30px;
+}
+#fixedNav {
+  background-color: rgba(0, 0, 0, 0.5);
+  font-weight: bolder;
+}
+p {
+  text-align: center;
+}
+#profile {
+  width: 650px;
+  margin: 0px auto;
+}
+#prof {
+  text-align: center;
+}
+#stripe {
+  margin: 0px auto;
+  text-align: center;
+}
+#footLinks a {
+  text-decoration: none;
+  font-weight: lighter;
+}
+#footLinks {
+  text-align: center;
+}
+#contactDev {
+  text-align: center;
+}
+#ptitle {
+  font-size: 32px;
+  font-weight: 500px;
+}
+</style>
+<section id="main" class="wrapper">
+  <div class="container-fluid" style="background-image: url('/images/c.jpg'); color: white; height:60%; margin-bottom:15px;">
+
+    <header class="major">
+      <h2 id="prof" style="color:white;"><%= @project.users[0].name %>'s Project</h2>
+    </header>
+  </div>
+</section>
+<div class="container">
+  <% if @project.users[0].photo %>
+    <img src="https://randomuser.me/api/portraits/<%= @project.users[0].photo %>.jpg" class="image right" style="height:200px;width:200px;"></p>
+  <% else %>
+    <img src="http://loremflickr.com/200/300/microprocessor" class="image right" id="randImg"></p>
+  <% end %>
+<p id="ptitle">
   <%= @project.title %>
 </p>
 
 <p>
-  <strong>Description:</strong>
-  <%= @project.description %>
+  <strong>Project Details</strong>
+  <p><%= @project.description %></p>
 </p>
 
 <p>
@@ -40,8 +90,8 @@
   <ul>
   <% @project.project_details.reject { |pd| pd.project_status || pd.offer_status || pd.project_status.nil? }.each do |pd| %>
     <li>
-      <%= pd.user.name %> | 
-      <a href="/project_details/<%= pd.id %>/contribute" data-method="patch">Accept</a> | 
+      <%= pd.user.name %> |
+      <a href="/project_details/<%= pd.id %>/contribute" data-method="patch">Accept</a> |
       <a href="/project_details/<%= pd.id %>/contribute" data-method="delete">Reject</a>
     </li>
   <% end %>
@@ -55,3 +105,4 @@
 <%= link_to 'Back', projects_path %> |
 <a href="/home">Home</a> |
 <a href="/project_details/<%= @project.id %>/contribute" data-method="post">Contribute</a>
+</div>

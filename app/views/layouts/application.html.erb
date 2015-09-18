@@ -156,14 +156,27 @@
   .warn {
     border: 1px solid red;
   }
+  #close {
+    font-size: 14px;
+		color: red;
+    font-weight: 500;
+  }
+  #close:hover {
+    cursor: pointer;
+    color: orange;
+  }
+  #regLink2 {
+    color: orange:
+  }
   </style>
   <script type="text/javascript">
   $(document).ready(function(){
-  	$("#regLink").click(function(){
+  	$(document).on("click", "#regLink", function(){
+      $("#regLink").toggle();
   		$("#logForm").slideToggle();
   		$("#reg").slideToggle();
   	})
-    $("#logInLink").click(function(){
+    $(document).on("click", "#logInLink", function(){
       $("#login").slideToggle(1000);
     })
   })
@@ -198,8 +211,14 @@
             $("#login").fadeIn(800).addClass("warn");
           </script>
         <% end %>
+      <script>
+        $(document).on("click", "#close", function(){
+          $("#login").fadeOut(800);
+        })
+      </script>
       </div>
   		<p id="regLink">Click here to register</p>
+      <p id='close'>Close this window</p>
   		<form action='/users/login' method='post' id="logForm">
   			<input type='hidden' name='authenticity_token' value='<%= form_authenticity_token %>'>
 
