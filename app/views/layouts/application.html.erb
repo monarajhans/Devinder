@@ -87,8 +87,9 @@
 		padding: 10px;
     position: fixed;
 		z-index: 3;
+    border-radius: 10px;
 	}
-	#regLink {
+  #regLink {
 		font-size: 14px;
 		color: #51ff15;
 	}
@@ -146,6 +147,15 @@
   #login p {
     margin-bottom: 0px;
   }
+  #errs {
+    color: red;
+    font-size: 24px;
+    font-weight: 400;
+    text-align: center;
+  }
+  .warn {
+    border: 1px solid red;
+  }
   </style>
   <script type="text/javascript">
   $(document).ready(function(){
@@ -175,9 +185,20 @@
       <% end %>
       <a href="/">Home</a><a href="/users">Developers</a><a href="/projects">Clients</a>
     </div>
+
   </div>
   <div id="login">
   		<h2 id="title">Login</h2>
+      <div id="errs">
+        <% if flash[:errors] %>
+          <% flash[:errors].each do |e| %>
+            <p><%= e %></p>
+          <% end %>
+          <script>
+            $("#login").fadeIn(800).addClass("warn");
+          </script>
+        <% end %>
+      </div>
   		<p id="regLink">Click here to register</p>
   		<form action='/users/login' method='post' id="logForm">
   			<input type='hidden' name='authenticity_token' value='<%= form_authenticity_token %>'>
@@ -223,11 +244,6 @@
   					</form>
   				</div>
   </div>
-<% if flash[:errors] %>
-  <% flash[:errors].each do |e| %>
-    <p><%= e %></p>
-  <% end %>
-<% end %>
 
 <%= yield %>
 

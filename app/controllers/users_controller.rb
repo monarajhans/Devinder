@@ -47,7 +47,7 @@ class UsersController < ApplicationController
       redirect_to "/users/#{user.id}"
     else
       flash[:errors] = ["Invalid email or password"]
-      redirect_to "/users/errors"
+      redirect_to "/"
     end
   end
 

@@ -27,9 +27,14 @@
         <td><%= user.email %></td>
         <td><%= user.title %></td>
         <td><%= user.description %></td>
-        <td style="width:100px;"><% (1..user.rating/user.total_ratings).each do %>
+        <td style="width:100px;">
+          <% if user.rating %>
+            <% (1..user.rating/user.total_ratings).each do %>
                   <img src="/images/star.png" style="height:10px; width:10px;">
-              <% end %></td>
+          <% end %>
+          <% else %>
+            <p>Not yet rated</p>
+          <% end %></td>
         <script>
           $("#showLink").click(function(){
             <% if session[:user_id] %>

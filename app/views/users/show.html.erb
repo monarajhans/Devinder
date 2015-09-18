@@ -55,7 +55,11 @@ p {
 <div class="container">
 <div id="profile">
   <p style="margin:0px auto;"><span><a href="#" class="icon rounded fa-github" style="color:black"><span class="label">Github</span></a><a href="#" class="icon rounded fa-linkedin" style="color:black"><span class="label">Linkedin</span></a></span>
-  <img src="https://randomuser.me/api/portraits/<%= @user.photo %>.jpg" class="image right" id="randImg"></p>
+  <% if @user.photo %>
+    <img src="https://randomuser.me/api/portraits/<%= @user.photo %>.jpg" class="image right" id="randImg"></p>
+  <% else %>
+    <img src="http://loremflickr.com/200/300/microprocessor" class="image right" id="randImg"></p>
+  <% end %>
   <p>
     <strong><%= @user.title %></strong>
   </p>
