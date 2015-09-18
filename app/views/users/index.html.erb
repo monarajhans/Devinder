@@ -9,10 +9,9 @@
 <div class="container">
 
 <table>
-  <thead>
+  <thead style="font-size:24px;">
     <tr>
       <th>Name</th>
-      <th>Email</th>
       <th>Title</th>
       <th>Description</th>
       <th style="width:100px;">Rating</th>
@@ -24,7 +23,6 @@
     <% @users.each do |user| %>
       <tr>
         <td><%= user.name %></td>
-        <td><%= user.email %></td>
         <td><%= user.title %></td>
         <td><%= user.description %></td>
         <td style="width:100px;">

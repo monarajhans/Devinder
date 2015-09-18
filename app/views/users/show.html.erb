@@ -23,7 +23,7 @@ p {
   text-align: center;
 }
 #profile {
-  width: 650px;
+  width: 960px;
   margin: 0px auto;
 }
 #prof {
@@ -42,6 +42,9 @@ p {
 }
 #contactDev {
   text-align: center;
+}
+#showProj {
+  margin-top: 160px;
 }
 </style>
 <section id="main" class="wrapper">
@@ -80,8 +83,32 @@ p {
     <% else %>
         <p>User is not yet rated</p>
     <% end %>
-
   </p>
+  <% if @user.role == "Developer" %>
+    <div id="showProj">
+      <p style="font-size:32px;">Projects looking for developers...</p>
+      <table>
+        <thead>
+          <tr>
+            <th>Client</th>
+            <th>Project Title</th>
+            <th>Description</th>
+            <th>Details</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @projects.each do |project| %>
+            <tr>
+              <td><%= project.users[0].name %></td>
+              <td><%= project.title %></td>
+              <td><%= project.description %></td>
+              <td><%= link_to 'Show Project', project %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  <% end %>
 
   <!-- <form action="/project_details/<%= @user.id %>/offer" method="post" class="three columns" id="contactDev">
     <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
@@ -98,7 +125,7 @@ p {
   <br>
   <br>
 </div>
-
+<p class="button big" id="centerBtn"><%= link_to 'New Project', new_project_path %></p>
   <div id="footLinks">
     <%= link_to 'Edit', edit_user_path(@user) %> |
     <%= link_to 'Back', users_path %> |

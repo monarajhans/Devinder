@@ -24,6 +24,9 @@ User.create(name: "Safeway", email: "s@gmail.com", password: "123", role: "Clien
 10, photo: "women/15")
 
 Project.create(title: "Need website built", description: "We are a small startup, trying to create an online precense. Looking for a full stack
-developer")
+developer.")
+
+Project.create(title: "iOS app for Safeway", description: "We are looking to integrate an iOS app experience for our customers.  We would like the app built completely include back and front end technologies.")
 
 ProjectDetail.create(user_id: 4, project_id: 1)
+ProjectDetail.create(user_id: 5, project_id: 2)

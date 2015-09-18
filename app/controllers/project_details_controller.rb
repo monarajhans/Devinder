@@ -1,4 +1,5 @@
 class ProjectDetailsController < ApplicationController
+  before_action :require_login
   def contribute
     ProjectDetail.create(user: User.find(session[:user_id]), project: Project.find(params[:id]), project_status: false)
     redirect_to :back
